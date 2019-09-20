@@ -1,6 +1,7 @@
 package expo.modules.filesystem;
 
 import android.content.Context;
+import android.net.Uri;
 
 import java.io.File;
 import java.io.IOException;
