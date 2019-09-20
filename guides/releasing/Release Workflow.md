@@ -18,7 +18,12 @@
   - [15. Make adhoc client shell app](#15-make-adhoc-client-shell-app)
   - [16. Deploy Turtle with new shell tarballs](#16-deploy-turtle-with-new-shell-tarballs)
   - [17. Publishing final packages to NPM registry](#17-publishing-final-packages-to-npm-registry)
-  - [18. Publishing final project templates](#18-publishing-final-project-templates)
+  - [18. Make production builds public](#18-make-production-builds-public)
+  - [19. Publishing final project templates](#19-publishing-final-project-templates)
+  - [20. Add SDK to Snack](#20-add-sdk-to-snack)
+  - [21. Update changelog](#21-update-changelog)
+  - [22. Publish release notes](#22-publish-release-notes)
+  - [23. Post on Twitter](#23-post-on-twitter)
 
 # Stage 1 - Versioning
 
@@ -264,11 +269,23 @@
 
 - On the release branch, use an expotool that will do all of the needed work - `et publish-packages`. You already used it to publish prereleased packages. Now we can publish them as stable releases and tag them as `latest` which is the default behavior of that script.
 
-## 18. Publishing final project templates
+## 18. Make production builds public
 
 | Requirements                                                                                   |
 | ---------------------------------------------------------------------------------------------- |
 | [17. Publishing final packages to NPM registry](#17-publishing-final-packages-to-npm-registry) |
+
+**Why:** Once we pass Apple's review and do all previous steps, we can finally press the button and make the clients available publicly.
+
+**How:**
+*todo*
+
+## 19. Publishing final project templates
+
+| Requirements                                                                                   |
+| ---------------------------------------------------------------------------------------------- |
+| [17. Publishing final packages to NPM registry](#17-publishing-final-packages-to-npm-registry) |
+| [18. Make production builds public](#18-make-production-builds-public)                         |
 
 **Why:** Once the final packages are out, we can now make a final version of project templates as well.
 
@@ -277,3 +294,13 @@
 - On a new branch, check all `expo-template-*` packages under `templates` directory and bump dependencies versions wherever possible. Use versions stored in `packages/expo/bundledNativeModules.json` for vendored libs like `react-native-gesture-handler`.
 - Run `et publish-templates` and answer to questions it asks.
 - Create a pull request from your branch to `master`. Make sure a reviewer will cherry-pick that commit to the release branch as well.
+
+## 20. Add SDK to Snack
+
+# Stage 6 - Announcements
+
+## 21. Update changelog
+
+## 22. Publish release notes
+
+## 23. Post on Twitter

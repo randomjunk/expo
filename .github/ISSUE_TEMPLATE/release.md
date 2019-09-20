@@ -40,4 +40,12 @@ assignees: ''
 ### Final touches
 
 - [ ] [17. Publishing final packages to NPM registry](#17-publishing-final-packages-to-npm-registry)
-- [ ] [18. Publishing final project templates](#18-publishing-final-project-templates)
+- [ ] [18. Make production builds public](#18-make-production-builds-public)
+- [ ] [19. Publishing final project templates](#19-publishing-final-project-templates)
+- [ ] [20. Add SDK to Snack](#20-add-sdk-to-snack)
+
+### Announcements
+
+- [ ] [21. Update changelog](#21-update-changelog)
+- [ ] [22. Publish release notes](#22-publish-release-notes)
+- [ ] [23. Post on Twitter](#23-post-on-twitter)
