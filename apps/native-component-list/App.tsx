@@ -3,11 +3,10 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import { Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
 import { Assets as StackAssets } from 'react-navigation-stack';
 import { useScreens } from 'react-native-screens';
 import { AppearanceProvider, useColorScheme, ColorSchemeName } from 'react-native-appearance';
-
 import Icons from './src/constants/Icons';
 import RootNavigation from './src/navigation/RootNavigation';
 
@@ -24,7 +23,11 @@ type State = typeof initialState;
 
 export default function AppContainer() {
   let colorScheme = useColorScheme();
-  return <AppearanceProvider><App colorScheme={colorScheme} /></AppearanceProvider>
+  return (
+    <AppearanceProvider>
+      <App colorScheme={colorScheme} />
+    </AppearanceProvider>
+  );
 }
 
 class App extends React.Component<Props, State> {

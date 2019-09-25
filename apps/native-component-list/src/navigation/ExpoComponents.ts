@@ -1,4 +1,3 @@
-import AdMob from '../screens/AdMobScreen';
 import BarCodeScanner from '../screens/BarCodeScannerScreen';
 
 import GestureHandlerList from '../screens/GestureHandlerListScreen';
@@ -18,16 +17,15 @@ function optionalRequire(requirer: () => { default: React.ComponentType }) {
   }
 }
 
+const AdMob = optionalRequire(() => require('../screens/AdMobScreen'));
 const ScreensScreens = optionalRequire(() => require('../screens/Screens'));
 const BlurView = optionalRequire(() => require('../screens/BlurViewScreen'));
 const Camera = optionalRequire(() => require('../screens/Camera/CameraScreen'));
-const FacebookAds = optionalRequire(() =>
-  require('../screens/FacebookAdsScreen')
-);
+const FacebookAds = optionalRequire(() => require('../screens/FacebookAdsScreen'));
 const GL = optionalRequire(() => require('../screens/GL/GLScreen'));
-const GLScreens = optionalRequire(
-  () => require('../screens/GL/GLScreens')
-) as unknown as { [key: string]: React.ComponentType };
+const GLScreens = (optionalRequire(() => require('../screens/GL/GLScreens')) as unknown) as {
+  [key: string]: React.ComponentType;
+};
 const Lottie = optionalRequire(() => require('../screens/LottieScreen'));
 const ReanimatedImagePreview = optionalRequire(() =>
   require('../screens/Reanimated/ReanimatedImagePreviewScreen')
@@ -68,10 +66,12 @@ interface ScreensObjectType {
   [key: string]: React.ComponentType;
 }
 
-export const Screens = Object.entries(optionalScreens)
-  .reduce<ScreensObjectType>((acc, [key, screen]) => {
+export const Screens = Object.entries(optionalScreens).reduce<ScreensObjectType>(
+  (acc, [key, screen]) => {
     if (screen) {
       acc[key] = screen;
     }
     return acc;
-  }, {});
+  },
+  {}
+);
